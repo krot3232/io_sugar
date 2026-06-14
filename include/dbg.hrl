@@ -6,7 +6,7 @@
 
     -define(ih(Bin),ok).
     -define(hex(Bin), <<>>).
-
+    -define(qi(Format),ok).
     -define(qu(Format),ok).
     -define(qj(Format),ok).
     -define(qh(Format),ok).
@@ -38,7 +38,8 @@
     -define(wu(Format),ok).
     -define(wj(Format),ok).
     -define(wh(Format),ok).
-
+    
+    -define(qi(Format, Args),ok).
     -define(qu(Format, Args),ok).
     -define(qj(Format, Args),ok).
     -define(qh(Format, Args),ok).
