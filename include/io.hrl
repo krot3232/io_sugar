@@ -1,17 +1,7 @@
-% ?i без цвета
-% ?ih hex
-
-% ?ri обычный
-% ?ru фон
-
-% ?rj яркий
-% ?rh фон
-
 -define(i(Format, Args),io:format(Format,Args)).
 -define(i(Format),io:format(Format)).
 
 -define(ih(Bin),io:format("HEX:~s~n",[?hex(Bin)])).
-
  -if(?OTP_RELEASE >= 24).
      -define(hex(Target), 
         (fun() ->
@@ -34,9 +24,6 @@
     ).
 -endif.
  
-
-
-%1 
 %black
 -define(qi(Format, Args),io:format("\e[0;30m"++Format++"\e[0m~n",Args)).
 -define(qi(Format),io:format("\e[0;30m"++Format++"\e[0m~n")).
@@ -62,7 +49,6 @@
 -define(wi(Format, Args),io:format("\e[0;37m"++Format++"\e[0m~n",Args)).
 -define(wi(Format),io:format("\e[0;37m"++Format++"\e[0m~n")).
 
-%% 2 
 %black background
 -define(qu(Format, Args),io:format("\e[0;40m"++Format++"\e[0m~n",Args)).
 -define(qu(Format),io:format("\e[0;40m"++Format++"\e[0m~n")).
@@ -87,8 +73,7 @@
 %white background
 -define(wu(Format, Args),io:format("\e[0;47m"++Format++"\e[0m~n",Args)).
 -define(wu(Format),io:format("\e[0;47m"++Format++"\e[0m~n")).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 3
+
 %%light black
 -define(qj(Format, Args),io:format("\e[0;90m"++Format++"\e[0m~n",Args)).
 -define(qj(Format),io:format("\e[0;90m"++Format++"\e[0m~n")).
@@ -114,7 +99,6 @@
 -define(wj(Format, Args),io:format("\e[0;97m"++Format++"\e[0m~n",Args)).
 -define(wj(Format),io:format("\e[0;97m"++Format++"\e[0m~n")).
 
-%% 4
 %%light black background
 -define(qh(Format, Args),io:format("\e[0;100m"++Format++"\e[0m~n",Args)).
 -define(qh(Format),io:format("\e[0;100m"++Format++"\e[0m~n")).
@@ -139,5 +123,3 @@
 %light white background
 -define(wh(Format, Args),io:format("\e[0;107m"++Format++"\e[0m~n",Args)).
 -define(wh(Format),io:format("\e[0;107m"++Format++"\e[0m~n")).
-
-
