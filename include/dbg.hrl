@@ -1,0 +1,74 @@
+ 
+%% add erl_opts ->{d, 'debug'}
+-ifdef(debug).
+    -include("io.hrl").
+-else.
+    -define(i(Format, Args),ok).
+    -define(i(Format),ok).
+    -define(ih(Bin),ok).
+    -define(hex(Bin), <<>>).
+    -define(h(Format, Args),ok).
+    -define(h(Format),ok).
+    -define(ri(Format, Args),ok).
+    -define(ri(Format),ok).
+    -define(gi(Format, Args),ok).
+    -define(gi(Format),ok).
+    -define(yi(Format, Args),ok).
+    -define(yi(Format),ok).
+    -define(u(Format, Args),ok).
+    -define(u(Format),ok).
+    -define(mi(Format, Args),ok).
+    -define(mi(Format),ok).
+    -define(ci(Format, Args),ok).
+    -define(ci(Format),ok).
+    -define(wi(Format, Args),ok).
+    -define(wi(Format),ok).
+    -define(qu(Format, Args),ok).
+    -define(qu(Format),ok).
+    -define(ru(Format, Args),ok).
+    -define(ru(Format),ok).
+    -define(gu(Format, Args),ok).
+    -define(gu(Format),ok).
+    -define(yu(Format, Args),ok).
+    -define(yu(Format),ok).
+    -define(bu(Format, Args),ok).
+    -define(bu(Format),ok).
+    -define(mu(Format, Args),ok).
+    -define(mu(Format),ok).
+    -define(cu(Format, Args),ok).
+    -define(cu(Format),ok).
+    -define(wu(Format, Args),ok).
+    -define(wu(Format),ok).
+    -define(qj(Format, Args),ok).
+    -define(qj(Format),ok).
+    -define(rj(Format, Args),ok).
+    -define(rj(Format),ok).
+    -define(gj(Format, Args),ok).
+    -define(gj(Format),ok).
+    -define(yj(Format, Args),ok).
+    -define(yj(Format),ok).
+    -define(bj(Format, Args),ok).
+    -define(bj(Format),ok).
+    -define(mj(Format, Args),ok).
+    -define(mj(Format),ok).
+    -define(cj(Format, Args),ok).
+    -define(cj(Format),ok).
+    -define(wj(Format, Args),ok).
+    -define(wj(Format),ok).
+    -define(qh(Format, Args),ok).
+    -define(qh(Format),ok).
+    -define(rh(Format, Args),ok).
+    -define(rh(Format),ok).
+    -define(gh(Format, Args),ok).
+    -define(gh(Format),ok).
+    -define(yh(Format, Args),ok).
+    -define(yh(Format),ok).
+    -define(bh(Format, Args),ok).
+    -define(bh(Format),ok).
+    -define(mh(Format, Args),ok).
+    -define(mh(Format),ok).
+    -define(ch(Format, Args),ok).
+    -define(ch(Format),ok).
+    -define(wh(Format, Args),ok).
+    -define(wh(Format),ok).
+-endif.
