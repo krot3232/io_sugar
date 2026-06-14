@@ -10,14 +10,36 @@
 -define(i(Format, Args),io:format(Format,Args)).
 -define(i(Format),io:format(Format)).
 
--define(ih(Bin),io:format("HEX:~p~n",[?hex(Bin)])).
--define(hex(Bin), binary:encode_hex(Bin) ).
+-define(ih(Bin),io:format("HEX:~s~n",[?hex(Bin)])).
+
+ -if(?OTP_RELEASE >= 24).
+     -define(hex(Target), 
+        (fun() ->
+            Bin = case is_list(Target) of 
+                true -> list_to_binary(Target); 
+                false -> Target 
+            end,
+            binary:encode_hex(Bin)
+        end)()
+    ).
+ -else.
+    -define(hex(Target), 
+        (fun() ->
+            Bin = case is_list(Target) of 
+                true -> list_to_binary(Target); 
+                false -> Target 
+            end,
+            << <<(if N < 10 -> N + $0; true -> N - 10 + $A end):8>> || <<N:4>> <= Bin >>
+        end)()
+    ).
+-endif.
+ 
 
 
 %1 
 %black
--define(h(Format, Args),io:format("\e[0;30m"++Format++"\e[0m~n",Args)).
--define(h(Format),io:format("\e[0;30m"++Format++"\e[0m~n")).
+-define(qi(Format, Args),io:format("\e[0;30m"++Format++"\e[0m~n",Args)).
+-define(qi(Format),io:format("\e[0;30m"++Format++"\e[0m~n")).
 %red
 -define(ri(Format, Args),io:format("\e[0;31m"++Format++"\e[0m~n",Args)).
 -define(ri(Format),io:format("\e[0;31m"++Format++"\e[0m~n")).
@@ -28,8 +50,8 @@
 -define(yi(Format, Args),io:format("\e[0;33m"++Format++"\e[0m~n",Args)).
 -define(yi(Format),io:format("\e[0;33m"++Format++"\e[0m~n")).
 %blue
--define(u(Format, Args),io:format("\e[0;34m"++Format++"\e[0m~n",Args)).
--define(u(Format),io:format("\e[0;34m"++Format++"\e[0m~n")).
+-define(bi(Format, Args),io:format("\e[0;34m"++Format++"\e[0m~n",Args)).
+-define(bi(Format),io:format("\e[0;34m"++Format++"\e[0m~n")).
 %magenta
 -define(mi(Format, Args),io:format("\e[0;35m"++Format++"\e[0m~n",Args)).
 -define(mi(Format),io:format("\e[0;35m"++Format++"\e[0m~n")).
@@ -55,7 +77,7 @@
 -define(yu(Format),io:format("\e[0;43m"++Format++"\e[0m~n")).
 %blue background
 -define(bu(Format, Args),io:format("\e[0;44m"++Format++"\e[0m~n",Args)).
--define(bu(Format),io:format("\e[0;45m"++Format++"\e[0m~n")).
+-define(bu(Format),io:format("\e[0;44m"++Format++"\e[0m~n")).
 %magenta background
 -define(mu(Format, Args),io:format("\e[0;45m"++Format++"\e[0m~n",Args)).
 -define(mu(Format),io:format("\e[0;45m"++Format++"\e[0m~n")).
