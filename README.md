@@ -9,22 +9,22 @@ Erlang marcros for io:format.
 
 ## How to use
 1.  rebar3.config add deps io_sugar and erl_opts debug:
------
+``` erlang
     {erl_opts, [{d, 'debug'}]}.
 
     {deps, [
         io_sugar
     ]}.
------
+```
 2. include hrl file:
------
+``` erlang
     -include_lib("io_sugar/include/dbg.hrl").
 
     %% or io.hrl if not use debug
     -include_lib("io_sugar/include/io.hrl").
------
+```
 3. use macros:
------
+``` erlang
     %% Text
     ?i("i").
     ?i("i ~p~n",[123]).
@@ -86,5 +86,4 @@ Erlang marcros for io:format.
     ?wu( " wu "),
     ?wj( " wj "),
     ?wh( " wh ").
-
------
+```
