@@ -7,7 +7,7 @@ Erlang marcros for io:format.
 [![Erlang](https://img.shields.io/badge/Erlang%2FOTP-R15+-deeppink?style=flat-square&logo=erlang&logoColor=ffffff)](https://www.erlang.org)
 [![Hex Version](https://img.shields.io/hexpm/v/io_sugar.svg?style=flat-square)](https://hex.pm/packages/io_sugar)
 
-## Why Use ?
+## How to use
 1.  rebar3.config add deps io_sugar and erl_opts debug:
 -----
     {erl_opts, [{d, 'debug'}]}.
