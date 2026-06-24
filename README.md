@@ -8,7 +8,7 @@ Erlang macros for io:format.
 [![Hex Version](https://img.shields.io/hexpm/v/io_sugar.svg?style=flat-square)](https://hex.pm/packages/io_sugar)
 
 ## How to use
-1.  rebar3.config add deps io_sugar and erl_opts debug:
+1. `rebar3.config` add deps `io_sugar` and *erl_opts debug*:
 ``` erlang
     {erl_opts, [{d, 'debug'}]}.
 
@@ -34,56 +34,46 @@ Erlang macros for io:format.
     ?hex("123").
 
     %% Color text:
-    %% name macros = color text + type
-    %% ?q|r|g|y|b|m|c|w + i|u|j|h
-    %type = i - standard color, u - standard color background, j - light color, h - light color background
+    ?ri("red text").
+    ?ri("red ~p ~s",[123,"qwe"]).
 
-    ?ri("red").
-    ?ri("red ~p",[123]).
-    ?ru("red background").
-    ?rj("light red").
-    ?rh("light red background").
+    %% Name macros = color(q|r|g|y|b|m|c|w) + type(i|u|j|h)
+    % color = q - black, r - red, g - green, y - yellow, b - blue, m - magenta, c - cyan, w - white
+    % type = i - standard color, u - standard color background, j - light color, h - light color background
 
-    ?gi("green").
-    ?gu("green background").
-    ?gj("light green").
-    ?gh("light green background").
-
-    ?bi("blue").
-    ?bu("blue background").
-    ?bj("light blue").
-    ?bh("light blue background").
-
-    ?qi( " qi "),
-    ?qu( " qu "),
-    ?qj( " qj "),
-    ?qh( " qh "),
-    ?ri( " ri "),
-    ?ru( " ru "),
-    ?rj( " rj "),
-    ?rh( " rh "),
-    ?gi( " gi "),
-    ?gu( " gu "),
-    ?gj( " gj "),
-    ?gh( " gh "),
-    ?yi( " yi "),
-    ?yu( " yu "),
-    ?yj( " yj "),
-    ?yh( " yh "),
-    ?bi( " bi "),
-    ?bu( " bu "),
-    ?bj( " bj "),
-    ?bh( " bh "),
-    ?mi( " mi "),
-    ?mu( " mu "),
-    ?mj( " mj "),
-    ?mh( " mh "),
-    ?ci( " ci "),
-    ?cu( " cu "),
-    ?cj( " cj "),
-    ?ch( " ch "),
-    ?wi( " wi "),
-    ?wu( " wu "),
-    ?wj( " wj "),
-    ?wh( " wh ").
+    ?qi("qi - black text"),
+    ?qu("qu - black text_background"),
+    ?qj("qj - black text_light"),
+    ?qh("qh - black text_light_background"),
+    ?ri("ri - red text"),
+    ?ru("ru - red text_background"),
+    ?rj("rj - red text_light"),
+    ?rh("rh - red text_light_background"),
+    ?gi("gi - green text"),
+    ?gu("gu - green text_background"),
+    ?gj("gj - green text_light"),
+    ?gh("gh - green text_light_background"),
+    ?yi("yi - yellow text"),
+    ?yu("yu - yellow text_background"),
+    ?yj("yj - yellow text_light"),
+    ?yh("yh - yellow text_light_background"),
+    ?bi("bi - blue text"),
+    ?bu("bu - blue text_background"),
+    ?bj("bj - blue text_light"),
+    ?bh("bh - blue text_light_background"),
+    ?mi("mi - magenta text"),
+    ?mu("mu - magenta text_background"),
+    ?mj("mj - magenta text_light"),
+    ?mh("mh - magenta text_light_background"),
+    ?ci("ci - cyan text"),
+    ?cu("cu - cyan text_background"),
+    ?cj("cj - cyan text_light"),
+    ?ch("ch - cyan text_light_background"),
+    ?wi("wi - white text"),
+    ?wu("wu - white text_background"),
+    ?wj("wj - white text_light"),
+    ?wh("wh - white text_light_background").
 ```
+---
+#### Color macros:  
+<img src="https://raw.githubusercontent.com/krot3232/logos/main/io_sugar_example.jpg" width="200" >
